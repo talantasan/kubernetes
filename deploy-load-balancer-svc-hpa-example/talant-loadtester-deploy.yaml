@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: talant-loadtester
   name: talant-loadtester
@@ -10,15 +9,15 @@ spec:
   selector:
     matchLabels:
       app: talant-loadtester
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: talant-loadtester
     spec:
       containers:
       - image: busybox
         name: busybox
-        resources: {}
-status: {}
+        command:
+          - /bin/sh
+          - -c 
+          - "while true; do wget -q -O- http://34.16.79.216:8080; done" 
