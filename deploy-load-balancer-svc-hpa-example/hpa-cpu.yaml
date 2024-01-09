@@ -1,0 +1,15 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  creationTimestamp: null
+  name: talant-api4
+spec:
+  maxReplicas: 5
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: talant-api4
+  targetCPUUtilizationPercentage: 65
+status:
+  currentReplicas: 0
+  desiredReplicas: 0

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: talant-loadtester
+  name: talant-loadtester
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: talant-loadtester
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: talant-loadtester
+    spec:
+      containers:
+      - image: busybox
+        name: busybox
+        resources: {}
+status: {}

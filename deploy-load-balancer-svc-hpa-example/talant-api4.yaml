@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: talant-api4
+  name: talant-api4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: talant-api4
+  template:
+    metadata:
+      labels:
+        app: talant-api4
+    spec:
+      containers:
+      - image: ktalant/api4:v2
+        name: api4
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: talant-api4-svc
+spec:
+  selector:
+    app: talant-api4
+  ports:
+    - port: 8080
+      targetPort: 5000
+  type: LoadBalancer
