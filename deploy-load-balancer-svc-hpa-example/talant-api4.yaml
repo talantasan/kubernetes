@@ -18,6 +18,7 @@ spec:
       containers:
       - image: ktalant/api4:v2
         name: api4
+        imagePullPolicy: Always  
         resources:
           limits:
             cpu: "0.4"
