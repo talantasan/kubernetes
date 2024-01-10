@@ -8,4 +8,4 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: talant-api4
-  targetCPUUtilizationPercentage: 65
+  targetCPUUtilizationPercentage: 80
