@@ -1,5 +1,6 @@
 # kubernetes
 ## Pod template resources limit/request needs to be set
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -17,7 +18,7 @@ spec:
     args:
     - -cpus
     - "2" 
-
+```
 
 ## Helm search repo / metrics-server
 ```
