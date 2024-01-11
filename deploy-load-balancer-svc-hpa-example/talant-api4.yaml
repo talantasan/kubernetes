@@ -24,11 +24,11 @@ spec:
             cpu: "0.4"
           requests:
             cpu: "0.1"
-      env:
-        - name: HOST_IP
-          valueFrom:
-            fieldRef: 
-              fieldPath: status.podIP
+        env:
+          - name: HOST_IP
+            valueFrom:
+              fieldRef: 
+                fieldPath: status.podIP
 ---
 apiVersion: v1
 kind: Service
