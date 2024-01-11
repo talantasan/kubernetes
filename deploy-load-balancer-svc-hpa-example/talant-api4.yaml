@@ -16,7 +16,7 @@ spec:
         app: talant-api4
     spec:
       containers:
-      - image: ktalant/api4:v2
+      - image: ktalant/api4:v1
         name: api4
         imagePullPolicy: Always  
         resources:
@@ -24,6 +24,15 @@ spec:
             cpu: "0.4"
           requests:
             cpu: "0.1"
+        command: ["export","HOST_IP=$(hostname -i)"]
+        env:
+        - name: HOST_IP
+          value: "$(HOST_IP)"
+      initContainers:
+        - name: busybox
+          image: busybox
+          command: ["sh", "-c", "export HOST_IP=$(hostname -i)"] 
+---
 ---
 apiVersion: v1
 kind: Service
