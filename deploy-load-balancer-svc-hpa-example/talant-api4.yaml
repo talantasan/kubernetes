@@ -26,7 +26,7 @@ spec:
             cpu: "0.1"
         env:
         - name: HOST_IP
-          value: "$(HOST_IP)"
+          value: $(HOST_IP)
       initContainers:
       - name: busybox
         image: busybox
